@@ -1,0 +1,52 @@
+{% from '_macros.html' import icon, csrf with context %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#394536">
+    <meta name="description" content="DataConnect: un directorio para organizar tus contactos, encontrar sus datos y mantenerlos al día.">
+    <title>{% block title %}DataConnect{% endblock %} · Gestión de contactos</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+  </head>
+  <body class="{{ 'app-page' if signed_in else 'auth-page' }}">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    {% if signed_in %}
+    <aside class="sidebar" aria-label="Navegación de DataConnect">
+      <a class="brand" href="{{ url_for('main.contacts') }}" aria-label="DataConnect: ir al directorio"><span class="brand-mark" aria-hidden="true">dc<span>.</span></span><span>DataConnect</span></a>
+      <nav aria-label="Navegación principal">
+        <a class="nav-link {{ 'active' if request.endpoint in ['main.contacts', 'main.contact_detail', 'main.edit_contact', 'main.delete_contact'] and not request.args.get('favoritos') }}" href="{{ url_for('main.contacts') }}" {% if request.endpoint == 'main.contacts' and not request.args.get('favoritos') %}aria-current="page"{% endif %}>{{ icon('users') }}<span>Contactos</span></a>
+        <a class="nav-link {{ 'active' if request.endpoint == 'main.contacts' and request.args.get('favoritos') }}" href="{{ url_for('main.contacts', favoritos='1') }}" {% if request.endpoint == 'main.contacts' and request.args.get('favoritos') %}aria-current="page"{% endif %}>{{ icon('star') }}<span>Favoritos</span></a>
+        <a class="nav-link {{ 'active' if request.endpoint == 'main.create_contact' }}" href="{{ url_for('main.create_contact') }}" {% if request.endpoint == 'main.create_contact' %}aria-current="page"{% endif %}>{{ icon('plus') }}<span>Nuevo contacto</span></a>
+        <a class="nav-link {{ 'active' if request.endpoint == 'main.stats' }}" href="{{ url_for('main.stats') }}" {% if request.endpoint == 'main.stats' %}aria-current="page"{% endif %}>{{ icon('chart') }}<span>Estadísticas</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <p>{{ 'Sesión de demostración' if demo_mode else 'Sesión activa' }}</p>
+        <form action="{{ url_for('main.logout') }}" method="post">{{ csrf() }}<button class="logout-button" type="submit">{{ icon('logout') }}<span>Cerrar sesión</span></button></form>
+      </div>
+    </aside>
+    {% endif %}
+
+    <main id="contenido" class="{{ 'main-content' if signed_in else 'auth-content' }}" tabindex="-1">
+      {% if signed_in and demo_mode %}<p class="demo-notice">{{ icon('info') }}<span>Estás explorando un directorio con datos ficticios de demostración.</span></p>{% endif %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}<div class="notice notice-{{ category }}" role="{{ 'alert' if category == 'error' else 'status' }}">{{ icon('check') }}<span>{{ message }}</span></div>{% endfor %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+      {% if signed_in %}<footer class="app-footer"><span>DataConnect</span><span>Tu directorio, en un solo lugar.</span></footer>{% endif %}
+    </main>
+
+    {% if signed_in %}
+    <dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-description">
+      <form id="delete-form" method="post">
+        {{ csrf() }}
+        <div class="dialog-heading"><h2 id="delete-title">Eliminar contacto</h2><button class="icon-button" type="button" data-close-dialog aria-label="Cerrar confirmación">{{ icon('close') }}</button></div>
+        <p id="delete-description">Se eliminará <strong id="delete-name"></strong> del directorio. Esta acción no se puede deshacer.</p>
+        <div class="form-actions"><button class="button button-secondary" type="button" data-close-dialog autofocus>Cancelar</button><button class="button button-danger" type="submit">Sí, eliminar contacto</button></div>
+      </form>
+    </dialog>
+    {% endif %}
+  </body>
+</html>

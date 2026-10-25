@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<section class="error-page"><span class="error-code" aria-label="Código de respuesta {{ code }}">{{ code }}</span><h1>{{ title }}</h1><p>{{ message }}</p><a class="button button-primary" href="{{ url_for('main.contacts') if signed_in else url_for('main.login') }}">{{ 'Volver al directorio' if signed_in else 'Volver al inicio de sesión' }}</a></section>
+{% endblock %}

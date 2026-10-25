@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import avatar, favorite_button, delete_link with context %}
+{% block title %}{{ 'Favoritos' if favorites_only else 'Contactos' }}{% endblock %}
+{% block content %}
+<header class="page-header"><div><h1>{{ 'Tus favoritos' if favorites_only else 'Tus contactos' }}</h1><p class="page-description">{{ 'Las personas que querés encontrar primero.' if favorites_only else 'Cada conexión, organizada a tu manera.' }}</p></div><a class="button button-primary" href="{{ url_for('main.create_contact') }}">{{ icon('plus') }}Nuevo contacto</a></header>
+<section class="directory" aria-label="Directorio de contactos">
+  <form class="directory-toolbar" action="{{ url_for('main.contacts') }}" method="get" role="search">
+    {% if favorites_only %}<input type="hidden" name="favoritos" value="1">{% endif %}
+    <div class="search-group"><label class="sr-only" for="search">Buscar contactos</label><div class="search-field">{{ icon('search') }}<input id="search" name="q" type="search" value="{{ query }}" maxlength="120" placeholder="Buscar por nombre, teléfono o correo"></div><button type="submit" class="button button-secondary">Buscar</button></div>
+    <div class="filter-group"><label for="category-filter">Categoría</label><select id="category-filter" name="categoria"><option value="">Todas</option>{% for category in categories %}<option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>{{ category }}</option>{% endfor %}</select></div>
+    <div class="filter-group"><label for="order">Ordenar</label><select id="order" name="orden"><option value="nombre" {% if order != 'recientes' %}selected{% endif %}>Nombre A–Z</option><option value="recientes" {% if order == 'recientes' %}selected{% endif %}>Más recientes</option></select></div>
+    <button type="submit" class="button button-secondary filter-apply">Aplicar filtros</button>
+  </form>
+  <div class="results-meta"><p>{{ contacts|length }} {{ 'contacto' if contacts|length == 1 else 'contactos' }}{% if query or selected_category or favorites_only %} de {{ total }} en tu directorio{% else %} en tu directorio{% endif %}</p>{% if query or selected_category %}<a class="text-link" href="{{ url_for('main.contacts', favoritos='1') if favorites_only else url_for('main.contacts') }}">Limpiar filtros</a>{% endif %}</div>
+  {% if contacts %}
+  <table class="contacts-table"><caption class="sr-only">Contactos del directorio con teléfono, categoría y acciones</caption><thead><tr><th scope="col">Contacto</th><th scope="col">Teléfono</th><th scope="col">Categoría</th><th scope="col" class="actions-heading">Acciones</th></tr></thead><tbody>
+    {% for contact in contacts %}
+    <tr><td class="contact-cell">{{ avatar(contact) }}<div class="contact-identity"><a href="{{ url_for('main.contact_detail', contact_id=contact.id) }}">{{ contact.full_name }}</a><span>{{ contact.email }}</span></div></td><td class="phone-cell"><span class="mobile-label">Teléfono</span><a href="tel:+506{{ contact.phone }}">+506 {{ contact.phone }}</a></td><td class="category-cell"><span class="category-tag">{{ contact.category }}</span></td><td class="actions-cell"><div class="row-actions">{{ favorite_button(contact, request.full_path) }}<a class="icon-button" href="{{ url_for('main.edit_contact', contact_id=contact.id) }}" aria-label="Editar a {{ contact.full_name }}" title="Editar contacto">{{ icon('edit') }}</a>{{ delete_link(contact) }}</div></td></tr>
+    {% endfor %}
+  </tbody></table>
+  {% else %}
+  <div class="empty-state">{{ icon('search' if query or selected_category else 'users') }}<h2>{{ 'No encontramos coincidencias' if query or selected_category else 'Tus favoritos empiezan aquí' if favorites_only else 'Tu próxima conexión empieza aquí' }}</h2><p>{{ 'Probá con otro nombre, teléfono o categoría.' if query or selected_category else 'Marcá una estrella junto a un contacto para tenerlo a mano.' if favorites_only else 'Agregá tu primer contacto para darle vida al directorio.' }}</p><a class="button button-secondary" href="{{ url_for('main.contacts') if query or selected_category or favorites_only else url_for('main.create_contact') }}">{{ 'Ver todos los contactos' if query or selected_category or favorites_only else 'Crear mi primer contacto' }}</a></div>
+  {% endif %}
+</section>
+{% endblock %}

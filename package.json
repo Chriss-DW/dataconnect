@@ -1,0 +1,7 @@
+{
+  "name": "dataconnect-ui-tests",
+  "private": true,
+  "description": "Pruebas opcionales de interfaz para DataConnect; Node.js no es necesario para ejecutar la aplicación.",
+  "scripts": { "test:ui": "node tests/browser.cjs" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

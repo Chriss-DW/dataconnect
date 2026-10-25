@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import avatar, favorite_button, delete_link with context %}
+{% block title %}{{ contact.full_name }}{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('main.contacts') }}">{{ icon('arrow-left') }}Volver al directorio</a>
+<header class="page-header"><div><h1>Detalle del contacto</h1><p class="page-description">La información que necesitás, a mano.</p></div><a class="button button-primary" href="{{ url_for('main.edit_contact', contact_id=contact.id) }}">{{ icon('edit') }}Editar contacto</a></header>
+<article class="detail-surface">
+  <header class="contact-profile">{{ avatar(contact, 'avatar-large') }}<div><h2>{{ contact.full_name }}</h2><span class="category-tag">{{ contact.category }}</span></div>{{ favorite_button(contact, request.path) }}</header>
+  <dl class="contact-data"><div><dt>Teléfono</dt><dd><a href="tel:+506{{ contact.phone }}">{{ icon('phone') }}+506 {{ contact.phone }}</a></dd></div><div><dt>Correo electrónico</dt><dd><a href="mailto:{{ contact.email }}">{{ icon('mail') }}{{ contact.email }}</a></dd></div><div class="field-wide"><dt>Dirección</dt><dd>{{ contact.address or 'No se agregó una dirección.' }}</dd></div><div><dt>Se agregó el</dt><dd>{{ contact.created_at|date_label }}</dd></div><div><dt>Última actualización</dt><dd>{{ contact.updated_at|date_label }}</dd></div></dl>
+  <div class="detail-footer">{{ delete_link(contact, true) }}<span>Podés editar sus datos cuando lo necesités.</span></div>
+</article>
+{% endblock %}

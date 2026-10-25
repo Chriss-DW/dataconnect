@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ 'Editar contacto' if editing else 'Nuevo contacto' }}{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('main.contact_detail', contact_id=contact.id) if editing else url_for('main.contacts') }}">{{ icon('arrow-left') }}{{ 'Volver al contacto' if editing else 'Volver al directorio' }}</a>
+<header class="page-header"><div><h1>{{ 'Editar contacto' if editing else 'Una nueva conexión' }}</h1><p class="page-description">{{ 'Actualizá la información y guardá tus cambios.' if editing else 'Guardá sus datos para encontrarlos cuando los necesités.' }}</p></div></header>
+<section class="form-surface" aria-label="Datos del contacto">
+  {% if errors %}<div class="error-summary" role="alert" tabindex="-1" data-error-summary><h2>Revisá estos datos antes de guardar</h2><ul>{% for field, error in errors.items() %}<li><a href="#{{ field }}">{{ error }}</a></li>{% endfor %}</ul></div>{% endif %}
+  <form method="post" novalidate class="contact-form">
+    {{ csrf() }}
+    <p class="form-guidance">Nombre, teléfono, correo y categoría son obligatorios. La dirección es opcional.</p>
+    <div class="form-grid">
+      <div class="field field-wide"><label for="full_name">Nombre completo</label><input id="full_name" name="full_name" value="{{ values.get('full_name', '') }}" maxlength="120" required autocomplete="name" {% if errors.full_name %}aria-invalid="true" aria-describedby="error-full_name"{% endif %}>{% if errors.full_name %}<p class="field-error" id="error-full_name">{{ errors.full_name }}</p>{% endif %}</div>
+      <div class="field"><label for="phone">Teléfono</label><input id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" value="{{ values.get('phone', '') }}" required autocomplete="tel-national" aria-describedby="phone-help{% if errors.phone %} error-phone{% endif %}" {% if errors.phone %}aria-invalid="true"{% endif %}><p class="field-hint" id="phone-help">8 dígitos, sin el prefijo +506.</p>{% if errors.phone %}<p class="field-error" id="error-phone">{{ errors.phone }}</p>{% endif %}</div>
+      <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" value="{{ values.get('email', '') }}" maxlength="254" required autocomplete="email" {% if errors.email %}aria-invalid="true" aria-describedby="error-email"{% endif %}>{% if errors.email %}<p class="field-error" id="error-email">{{ errors.email }}</p>{% endif %}</div>
+      <div class="field"><label for="category">Categoría</label><select id="category" name="category" required {% if errors.category %}aria-invalid="true" aria-describedby="error-category"{% endif %}><option value="">Elegí una categoría</option>{% for category in categories %}<option value="{{ category }}" {% if values.get('category') == category %}selected{% endif %}>{{ category }}</option>{% endfor %}</select>{% if errors.category %}<p class="field-error" id="error-category">{{ errors.category }}</p>{% endif %}</div>
+      <div class="field field-wide"><label for="address">Dirección <span class="optional">(opcional)</span></label><textarea id="address" name="address" maxlength="240" rows="3" autocomplete="street-address" {% if errors.address %}aria-invalid="true" aria-describedby="error-address"{% endif %}>{{ values.get('address', '') }}</textarea>{% if errors.address %}<p class="field-error" id="error-address">{{ errors.address }}</p>{% endif %}</div>
+    </div>
+    <div class="form-actions"><a class="button button-secondary" href="{{ url_for('main.contact_detail', contact_id=contact.id) if editing else url_for('main.contacts') }}">Cancelar</a><button class="button button-primary" type="submit">{{ icon('check') }}{{ 'Guardar cambios' if editing else 'Crear contacto' }}</button></div>
+  </form>
+</section>
+{% endblock %}

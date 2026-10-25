@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Eliminar contacto{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('main.contact_detail', contact_id=contact.id) }}">{{ icon('arrow-left') }}Volver al contacto</a>
+<header class="page-header"><div><h1>Eliminar contacto</h1><p class="page-description">Revisá la información antes de continuar.</p></div></header>
+<section class="form-surface confirmation-surface"><h2>{{ contact.full_name }}</h2><p>Se eliminará este contacto del directorio. Esta acción no se puede deshacer.</p><form method="post">{{ csrf() }}<div class="form-actions"><a class="button button-secondary" href="{{ url_for('main.contact_detail', contact_id=contact.id) }}">Cancelar</a><button class="button button-danger" type="submit">Sí, eliminar contacto</button></div></form></section>
+{% endblock %}

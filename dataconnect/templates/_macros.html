@@ -1,0 +1,23 @@
+{% macro icon(name, extra='') -%}
+<svg class="icon {{ extra }}" width="20" height="20" aria-hidden="true"><use href="{{ url_for('static', filename='icons.svg') }}#{{ name }}"></use></svg>
+{%- endmacro %}
+
+{% macro csrf() -%}
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+{%- endmacro %}
+
+{% macro avatar(contact, size='') -%}
+<span class="avatar {{ size }}" aria-hidden="true">{{ contact.initials }}</span>
+{%- endmacro %}
+
+{% macro favorite_button(contact, return_to) -%}
+<form action="{{ url_for('main.favorite', contact_id=contact.id) }}" method="post" class="inline-form">
+  {{ csrf() }}
+  <input type="hidden" name="return_to" value="{{ return_to }}">
+  <button class="icon-button {{ 'is-favorite' if contact.favorite }}" type="submit" aria-pressed="{{ 'true' if contact.favorite else 'false' }}" aria-label="{{ 'Quitar a' if contact.favorite else 'Agregar a' }} {{ contact.full_name }} {{ 'de' if contact.favorite else 'a' }} favoritos" title="{{ 'Quitar de favoritos' if contact.favorite else 'Agregar a favoritos' }}">{{ icon('star') }}</button>
+</form>
+{%- endmacro %}
+
+{% macro delete_link(contact, text=false) -%}
+<a href="{{ url_for('main.delete_contact', contact_id=contact.id) }}" class="{{ 'button button-danger-soft' if text else 'icon-button danger-action' }}" data-delete-contact="{{ contact.full_name }}" aria-label="Eliminar a {{ contact.full_name }}" title="Eliminar contacto">{{ icon('trash') }}{% if text %}Eliminar contacto{% endif %}</a>
+{%- endmacro %}

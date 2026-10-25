@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block content %}
+<div class="login-layout">
+  <section class="login-intro" aria-labelledby="intro-title">
+    <a class="brand" href="{{ url_for('main.login') }}"><span class="brand-mark" aria-hidden="true">dc<span>.</span></span><span>DataConnect</span></a>
+    <div class="login-intro-copy">
+      <h1 id="intro-title">Las conexiones importantes<br>merecen su lugar.</h1>
+      <p>Organizá tus contactos, encontrá sus datos y mantené cerca a las personas con las que contás.</p>
+      <div class="directory-preview" aria-hidden="true"><span class="preview-avatar">AP</span><span><strong>Un directorio claro.</strong><small>Para cada nombre y cada conexión.</small></span>{{ icon('check') }}</div>
+    </div>
+    <p class="login-signature">Tu directorio, en un solo lugar.</p>
+  </section>
+  <section class="login-panel" aria-labelledby="login-title">
+    <div class="login-form-wrap">
+      <h2 id="login-title">Iniciar sesión</h2>
+      <p class="page-description">Entrá a tu directorio para continuar.</p>
+      {% if error %}<div class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
+      <form action="{{ url_for('main.login', next=request.args.get('next')) }}" method="post" class="login-form">
+        {{ csrf() }}
+        <div class="field"><label for="username">Usuario</label><input id="username" name="username" value="{{ username }}" required maxlength="100" autocomplete="username" autocapitalize="none" spellcheck="false" {% if error %}aria-invalid="true"{% endif %}></div>
+        <div class="field"><label for="password">Contraseña</label><input id="password" type="password" name="password" required autocomplete="current-password" {% if error %}aria-invalid="true"{% endif %}></div>
+        <button type="submit" class="button button-primary">Entrar al directorio{{ icon('arrow-right') }}</button>
+      </form>
+      {% if demo_mode %}<aside class="demo-access" aria-label="Acceso de demostración"><strong>Explorá la demostración</strong><p>Los contactos son ficticios. Podés probar las funciones con este acceso:</p><dl><div><dt>Usuario</dt><dd>demo</dd></div><div><dt>Contraseña</dt><dd>dataconnect-demo</dd></div></dl></aside>{% endif %}
+    </div>
+  </section>
+</div>
+{% endblock %}

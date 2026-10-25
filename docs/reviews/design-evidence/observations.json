@@ -1,0 +1,980 @@
+[
+  {
+    "device": "desktop",
+    "name": "login",
+    "path": "/login",
+    "innerWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "text": "DC\nDataConnect\n\nACCESO\n\nInicio de Sesión\nDataConnect\nCORREO ELECTRÓNICO:\nCONTRASEÑA:\nEntrar\nOU",
+    "fields": [
+      {
+        "name": "usuario",
+        "type": "text",
+        "required": true,
+        "placeholder": "Escribe Tu Usuario",
+        "height": 54
+      },
+      {
+        "name": "contrasena",
+        "type": "password",
+        "required": true,
+        "placeholder": "Escribe Tu Contraseña",
+        "height": 43
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "DataConnect",
+        "font": "\"Playfair Display\", serif",
+        "size": "40px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "CORREO ELECTRÓNICO:",
+        "font": "Lato, sans-serif",
+        "size": "12.48px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "16.8px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "CONTRASEÑA:",
+        "font": "Lato, sans-serif",
+        "size": "12.48px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "desktop",
+    "name": "list",
+    "path": "/principal",
+    "innerWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Contactos\nAgregar Nuevo Contacto\nOrdenar A-Z\nTELÉFONO\nINFORMACIÓN\nACCIONES\nAna Prueba\nana@example.test\n+506 00000001\nLuis Ejemplo\nluis@example.test\n+506 00000002",
+    "fields": [
+      {
+        "name": "q",
+        "type": "text",
+        "required": false,
+        "placeholder": "Buscar contacto por nombre, teléfono...",
+        "height": 39
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "35.2px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "H3",
+        "text": " Confirmar Eliminación",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      }
+    ],
+    "actions": [
+      {
+        "title": "Ver detalles de Ana",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Alternar Favorito",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Editar a Ana",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Eliminar contacto",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Ver detalles de Luis",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Alternar Favorito",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Editar a Luis",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Eliminar contacto",
+        "width": 36,
+        "height": 36
+      }
+    ]
+  },
+  {
+    "device": "desktop",
+    "name": "create",
+    "path": "/crear_contacto",
+    "innerWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Crear Contactos\nDC\nDataConnect\nNOMBRE COMPLETO\nTELÉFONO\nCORREO ELECTRÓNICO\nETIQUETA LABORAL\nSeleccione una etiqueta laboral\nFamilia\nTrabajo\nAmigos\nOtro\nDIRECCIÓN DOMICILIARIA\nCancelar\nGuardar Contacto",
+    "fields": [
+      {
+        "name": "nombre_completo",
+        "type": "text",
+        "required": true,
+        "placeholder": "Escriba el nombre completo",
+        "height": 43
+      },
+      {
+        "name": "telefono",
+        "type": "tel",
+        "required": true,
+        "placeholder": "Número de teléfono",
+        "height": 43
+      },
+      {
+        "name": "correo",
+        "type": "email",
+        "required": true,
+        "placeholder": "ejemplo@gmail.com",
+        "height": 43
+      },
+      {
+        "name": "categoria",
+        "type": "select-one",
+        "required": true,
+        "height": 43
+      },
+      {
+        "name": "direccion",
+        "type": "text",
+        "required": true,
+        "placeholder": "Provincia, Cantón, Distrito y señas particulares",
+        "height": 43
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Crear Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "35.2px"
+      },
+      {
+        "tag": "H3",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "24px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "NOMBRE COMPLETO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "TELÉFONO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "CORREO ELECTRÓNICO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "ETIQUETA LABORAL\nSeleccione una etiqueta laboral\nFamilia\nTrabajo\nAmigos\nOtro",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "desktop",
+    "name": "edit",
+    "path": "/editar/2",
+    "innerWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Editar Contactos\nDC\nDataConnect\nEDITAR NOMBRE COMPLETO\nEDITAR TELÉFONO\nEDITAR CORREO ELECTRÓNICO\nEDITAR ETIQUETA LABORAL\nFamilia\nTrabajo\nAmigos\nOtro\nEDITAR DIRECCIÓN DOMICILIARIA\nCancelar\nGuardar Contacto",
+    "fields": [
+      {
+        "name": "nombre",
+        "type": "text",
+        "required": true,
+        "placeholder": "Escriba el nombre completo",
+        "height": 43
+      },
+      {
+        "name": "telefono",
+        "type": "tel",
+        "required": true,
+        "placeholder": "Número de teléfono",
+        "height": 43
+      },
+      {
+        "name": "correo",
+        "type": "email",
+        "required": true,
+        "placeholder": "ejemplo@gmail.com",
+        "height": 43
+      },
+      {
+        "name": "categoria",
+        "type": "select-one",
+        "required": true,
+        "height": 43
+      },
+      {
+        "name": "direccion",
+        "type": "text",
+        "required": true,
+        "placeholder": "Modifique el domicilio residencial",
+        "height": 43
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Editar Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "35.2px"
+      },
+      {
+        "tag": "H3",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "24px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR NOMBRE COMPLETO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR TELÉFONO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR CORREO ELECTRÓNICO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR ETIQUETA LABORAL\nFamilia\nTrabajo\nAmigos\nOtro",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "desktop",
+    "name": "detail",
+    "path": "/mas_informacion/2",
+    "innerWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\nEditar Usuario\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nReporte Detallado del Contacto\nVolver al Menú\nAna Prueba\nTRABAJO\n\nNÚMERO DE TELÉFONO\n+506 00000001\n\nCORREO ELECTRÓNICO\nana@example.test\n\nDIRECCIÓN DOMICILIARIA\nDirección ficticia\n\nTIPO DE CONTACTO\nDestacado en Favoritos\n\nESTADO DE DISPONIBILIDAD\nConectado",
+    "fields": [],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Reporte Detallado del Contacto",
+        "font": "\"Playfair Display\", serif",
+        "size": "35.2px"
+      },
+      {
+        "tag": "H3",
+        "text": "Ana Prueba",
+        "font": "Lato, sans-serif",
+        "size": "22.4px"
+      }
+    ],
+    "actions": [
+      {
+        "title": "Alternar Favorito",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "title": "Modificar Datos",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "title": "Eliminar del Sistema",
+        "width": 42,
+        "height": 42
+      }
+    ]
+  },
+  {
+    "device": "desktop",
+    "name": "stats",
+    "path": "/estadisticas",
+    "innerWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Estadisticas\nÚltimos Contactos Registrados\nL\nLuis Ejemplo\nluis@example.test\nA\nAna Prueba\nana@example.test\nContactos Totales\n2 registrados\n\nIncremento exponencial de contactos\n\nContactos Favoritos\n1 destacados\n\nTotal de contactos preferenciales",
+    "fields": [],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Estadisticas",
+        "font": "\"Playfair Display\", serif",
+        "size": "35.2px"
+      },
+      {
+        "tag": "H3",
+        "text": "Últimos Contactos Registrados",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "desktop",
+    "name": "empty",
+    "path": "/principal?q=sinresultadozxyz",
+    "innerWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Contactos\nAgregar Nuevo Contacto\nLimpiar\nOrdenar A-Z\nTELÉFONO\nINFORMACIÓN\nACCIONES\nNo hay contactos que coincidan con la búsqueda.",
+    "fields": [
+      {
+        "name": "q",
+        "type": "text",
+        "required": false,
+        "placeholder": "Buscar contacto por nombre, teléfono...",
+        "height": 39
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "35.2px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "H3",
+        "text": " Confirmar Eliminación",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "mobile",
+    "name": "login",
+    "path": "/login",
+    "innerWidth": 980,
+    "clientWidth": 980,
+    "scrollWidth": 980,
+    "text": "DC\nDataConnect\n\nACCESO\n\nInicio de Sesión\nDataConnect\nCORREO ELECTRÓNICO:\nCONTRASEÑA:\nEntrar\nOU",
+    "fields": [
+      {
+        "name": "usuario",
+        "type": "text",
+        "required": true,
+        "placeholder": "Escribe Tu Usuario",
+        "height": 54
+      },
+      {
+        "name": "contrasena",
+        "type": "password",
+        "required": true,
+        "placeholder": "Escribe Tu Contraseña",
+        "height": 43
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "25.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "DataConnect",
+        "font": "\"Playfair Display\", serif",
+        "size": "40px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "CORREO ELECTRÓNICO:",
+        "font": "Lato, sans-serif",
+        "size": "12.48px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "16.8px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "CONTRASEÑA:",
+        "font": "Lato, sans-serif",
+        "size": "12.48px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "mobile",
+    "name": "list",
+    "path": "/principal",
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Contactos\nAgregar Nuevo Contacto\nOrdenar A-Z\nAna Prueba\nana@example.test\n+506 00000001\nLuis Ejemplo\nluis@example.test\n+506 00000002",
+    "fields": [
+      {
+        "name": "q",
+        "type": "text",
+        "required": false,
+        "placeholder": "Buscar contacto por nombre, teléfono...",
+        "height": 39
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "17.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "H3",
+        "text": " Confirmar Eliminación",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      }
+    ],
+    "actions": [
+      {
+        "title": "Ver detalles de Ana",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Alternar Favorito",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Editar a Ana",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Eliminar contacto",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Ver detalles de Luis",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Alternar Favorito",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Editar a Luis",
+        "width": 36,
+        "height": 36
+      },
+      {
+        "title": "Eliminar contacto",
+        "width": 36,
+        "height": 36
+      }
+    ]
+  },
+  {
+    "device": "mobile",
+    "name": "create",
+    "path": "/crear_contacto",
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Crear Contactos\nDC\nDataConnect\nNOMBRE COMPLETO\nTELÉFONO\nCORREO ELECTRÓNICO\nETIQUETA LABORAL\nSeleccione una etiqueta laboral\nFamilia\nTrabajo\nAmigos\nOtro\nDIRECCIÓN DOMICILIARIA\nCancelar\nGuardar Contacto",
+    "fields": [
+      {
+        "name": "nombre_completo",
+        "type": "text",
+        "required": true,
+        "placeholder": "Escriba el nombre completo",
+        "height": 43
+      },
+      {
+        "name": "telefono",
+        "type": "tel",
+        "required": true,
+        "placeholder": "Número de teléfono",
+        "height": 43
+      },
+      {
+        "name": "correo",
+        "type": "email",
+        "required": true,
+        "placeholder": "ejemplo@gmail.com",
+        "height": 43
+      },
+      {
+        "name": "categoria",
+        "type": "select-one",
+        "required": true,
+        "height": 43
+      },
+      {
+        "name": "direccion",
+        "type": "text",
+        "required": true,
+        "placeholder": "Provincia, Cantón, Distrito y señas particulares",
+        "height": 43
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "17.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Crear Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "24px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "NOMBRE COMPLETO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "TELÉFONO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "CORREO ELECTRÓNICO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "ETIQUETA LABORAL\nSeleccione una etiqueta laboral\nFamilia\nTrabajo\nAmigos\nOtro",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "mobile",
+    "name": "edit",
+    "path": "/editar/2",
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Editar Contactos\nDC\nDataConnect\nEDITAR NOMBRE COMPLETO\nEDITAR TELÉFONO\nEDITAR CORREO ELECTRÓNICO\nEDITAR ETIQUETA LABORAL\nFamilia\nTrabajo\nAmigos\nOtro\nEDITAR DIRECCIÓN DOMICILIARIA\nCancelar\nGuardar Contacto",
+    "fields": [
+      {
+        "name": "nombre",
+        "type": "text",
+        "required": true,
+        "placeholder": "Escriba el nombre completo",
+        "height": 43
+      },
+      {
+        "name": "telefono",
+        "type": "tel",
+        "required": true,
+        "placeholder": "Número de teléfono",
+        "height": 43
+      },
+      {
+        "name": "correo",
+        "type": "email",
+        "required": true,
+        "placeholder": "ejemplo@gmail.com",
+        "height": 43
+      },
+      {
+        "name": "categoria",
+        "type": "select-one",
+        "required": true,
+        "height": 43
+      },
+      {
+        "name": "direccion",
+        "type": "text",
+        "required": true,
+        "placeholder": "Modifique el domicilio residencial",
+        "height": 43
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "17.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Editar Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "24px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR NOMBRE COMPLETO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR TELÉFONO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR CORREO ELECTRÓNICO",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "LABEL",
+        "text": "EDITAR ETIQUETA LABORAL\nFamilia\nTrabajo\nAmigos\nOtro",
+        "font": "Lato, sans-serif",
+        "size": "16px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "mobile",
+    "name": "detail",
+    "path": "/mas_informacion/2",
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\nEditar Usuario\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nReporte Detallado del Contacto\nVolver al Menú\nAna Prueba\nTRABAJO\n\nNÚMERO DE TELÉFONO\n+506 00000001\n\nCORREO ELECTRÓNICO\nana@example.test\n\nDIRECCIÓN DOMICILIARIA\nDirección ficticia\n\nTIPO DE CONTACTO\nDestacado en Favoritos\n\nESTADO DE DISPONIBILIDAD\nConectado",
+    "fields": [],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "17.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Reporte Detallado del Contacto",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Ana Prueba",
+        "font": "Lato, sans-serif",
+        "size": "22.4px"
+      }
+    ],
+    "actions": [
+      {
+        "title": "Alternar Favorito",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "title": "Modificar Datos",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "title": "Eliminar del Sistema",
+        "width": 42,
+        "height": 42
+      }
+    ]
+  },
+  {
+    "device": "mobile",
+    "name": "stats",
+    "path": "/estadisticas",
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Estadisticas\nÚltimos Contactos Registrados\nL\nLuis Ejemplo\nluis@example.test\nA\nAna Prueba\nana@example.test\nContactos Totales\n2 registrados\n\nIncremento exponencial de contactos\n\nContactos Favoritos\n1 destacados\n\nTotal de contactos preferenciales",
+    "fields": [],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "17.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Estadisticas",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Últimos Contactos Registrados",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      }
+    ],
+    "actions": []
+  },
+  {
+    "device": "mobile",
+    "name": "empty",
+    "path": "/principal?q=sinresultadozxyz",
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "text": "DC\nDataConnect\n\nGESTIÓN\n\nMenú Principal\nCrear contactos\n\nHERRAMIENTAS\n\nEstadísticas\nCerrar Sesión\nPanel Principal: Contactos\nAgregar Nuevo Contacto\nLimpiar\nOrdenar A-Z\nNo hay contactos que coincidan con la búsqueda.",
+    "fields": [
+      {
+        "name": "q",
+        "type": "text",
+        "required": false,
+        "placeholder": "Buscar contacto por nombre, teléfono...",
+        "height": 39
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "H1",
+        "text": "DataConnect",
+        "font": "Lato, sans-serif",
+        "size": "17.6px"
+      },
+      {
+        "tag": "H2",
+        "text": "Panel Principal: Contactos",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "font": "Lato, sans-serif",
+        "size": "15.2px"
+      },
+      {
+        "tag": "H3",
+        "text": " Confirmar Eliminación",
+        "font": "\"Playfair Display\", serif",
+        "size": "24px"
+      }
+    ],
+    "actions": []
+  }
+]
